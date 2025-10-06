@@ -31,13 +31,14 @@ void display()
     }
     printf("NULL\n");
 }
-int main(
-    {
+int main()
+{
     insert_at_begin(10);
     insert_at_begin(20);
     insert_at_begin(30);
     display();
     return 0;
+}
 
 
 
