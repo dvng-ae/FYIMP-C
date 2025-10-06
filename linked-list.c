@@ -9,11 +9,14 @@ struct node
 
 struct node *head = NULL, *tail = NULL;
 
-void addNode(int data){
+void addNode(){
     struct node *newNode = (struct node*)malloc(sizeof(struct node));
 
-    newNode->data = data;
+    printf("Enter the Data");
+    scanf("%d",&newNode->data);
+
     newNode->link = NULL;
+
 
     if(head == NULL)
     {
@@ -26,7 +29,7 @@ void addNode(int data){
         tail = newNode;
     }
 }
-void display(){
+void display1(){
     struct node *temp = head;
 
     if(head == NULL)
@@ -45,10 +48,10 @@ void display(){
 }
 int main()
 {
-    addNode(10);
-    addNode(20);
-    addNode(30);
-    addNode(40);
+    addNode();
+    addNode();
+    addNode();
+    addNode();
 
-    display();
+    display1();
 }
