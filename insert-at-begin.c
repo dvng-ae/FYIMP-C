@@ -1,69 +1,47 @@
-#include <stdio.h>
+#include<stdio.h>
+#include<stdlib.h>
 
-int main() {
-    int arr[100], n, i, pos, val;
+struct node
+{
+    int data;
+    struct node *link;
+};  
+struct node *start = NULL;
 
-    printf("Enter number of elements in array: ");
-    scanf("%d", &n);
-
-    printf("Enter %d elements:\n", n);
-    for (i = 0; i < n; i++) {
-        scanf("%d", &arr[i]);
+void insert_at_begin(int data)
+{
+    struct node *new_node = (struct node *)malloc(sizeof(struct node));
+    IF(new_node == NULL)
+    {
+        printf("Memory allocation failed\n");
+        return;
     }
-
-    printf("\nArray before insertion:\n");
-    for (i = 0; i < n; i++) {
-        printf("%d ", arr[i]);
-    }
-    printf("\n");
-
-    // Insert at the beginning
-    printf("\nEnter element to insert at the beginning: ");
-    scanf("%d", &val);
-
-    for (i = n; i > 0; i--) {
-        arr[i] = arr[i - 1];
-    }
-    arr[0] = val;
-    n++;
-
-    printf("Array after inserting at beginning:\n");
-    for (i = 0; i < n; i++) {
-        printf("%d ", arr[i]);
-    }
-    printf("\n");
-
-    // Insert at the end
-    printf("\nEnter element to insert at the end: ");
-    scanf("%d", &val);
-
-    arr[n] = val;
-    n++;
-
-    printf("Array after inserting at end:\n");
-    for (i = 0; i < n; i++) {
-        printf("%d ", arr[i]);
-    }
-    printf("\n");
-
-    // Insert at a specific position
-    printf("\nEnter position to insert (1 to %d): ", n + 1);
-    scanf("%d", &pos);
-
-    printf("Enter element to insert at position %d: ", pos);
-    scanf("%d", &val);
-
-    for (i = n; i >= pos; i--) {
-        arr[i] = arr[i - 1];
-    }
-    arr[pos - 1] = val;
-    n++;
-
-    printf("Array after inserting at position %d:\n", pos);
-    for (i = 0; i < n; i++) {
-        printf("%d ", arr[i]);
-    }
-    printf("\n");
-
-    return 0;
+    new_node->data = data;
+    new_node->link = start;
+    start = new_node;
 }
+void display()
+{
+    struct node *temp;
+    temp= start;
+    while(temp!=NULL)
+    {
+        printf("%d -> ",temp->data);
+        temp = tem ->link;
+    }
+    printf("NULL\n");
+}
+int main(
+    {
+    insert_at_begin(10);
+    insert_at_begin(20);
+    insert_at_begin(30);
+    display();
+    return 0;
+
+
+
+
+
+    }
+)
