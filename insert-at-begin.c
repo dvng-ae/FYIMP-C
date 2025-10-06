@@ -11,7 +11,7 @@ struct node *start = NULL;
 void insert_at_begin(int data)
 {
     struct node *new_node = (struct node *)malloc(sizeof(struct node));
-    IF(new_node == NULL)
+    if(new_node == NULL)
     {
         printf("Memory allocation failed\n");
         return;
@@ -27,7 +27,7 @@ void display()
     while(temp!=NULL)
     {
         printf("%d -> ",temp->data);
-        temp = tem ->link;
+        temp = temp ->link;
     }
     printf("NULL\n");
 }
@@ -39,10 +39,3 @@ int main()
     display();
     return 0;
 }
-
-
-
-
-
-    }
-)
