@@ -14,7 +14,7 @@ void enqueue(int value){
         front =0;
         rear++;
         queue[rear]= value;
-        printf("%d enqueued",value);
+        printf("%d enqueued , ",value);
     }
 }
 void dequeue(){
@@ -46,3 +46,4 @@ int main(){
     dequeue();
     display();
 }
+
